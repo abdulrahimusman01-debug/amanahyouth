@@ -420,50 +420,6 @@
         }
 
         /* ==================== VOTE SECTION ==================== */
-        .vote {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .vote h2 {
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-
-        .vote p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            color: rgba(255, 255, 255, 0.95);
-        }
-
-        /* ==================== LIVE RESPONSES SECTION ==================== */
-        .live-responses {
-            background-color: var(--white);
-        }
-
-        .responses-container {
-            margin-top: 2rem;
-        }
-
-        .responses-note {
-            background-color: var(--light-gray);
-            padding: 1rem;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-            color: var(--text-gray);
-            font-size: 0.9rem;
-            border-left: 4px solid var(--gold);
-        }
-
-        .sheet-embed {
-            width: 100%;
-            height: 600px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin-top: 1rem;
-        }
-
         /* ==================== CONTACT SECTION ==================== */
         .contact {
             background-color: var(--light-gray);
@@ -645,8 +601,6 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#candidates">Candidates</a></li>
                 <li><a href="#documents">Documents</a></li>
-                <li><a href="#rules">Rules</a></li>
-                <li><a href="#vote">Vote</a></li>
                 <li><a href="#budget">Budget</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -770,104 +724,53 @@
         </div>
     </section>
 
-    <!-- ==================== RULES SECTION ==================== -->
-    <section class="rules" id="rules">
-        <h2>Election Rules & Guidelines</h2>
-        <div class="rules-list">
-            <div class="rule-item">
-                <h4>🤝 Respect All</h4>
-                <p>Respect all candidates and voters equally. Personal attacks and disrespectful behavior are not tolerated.</p>
-            </div>
-            <div class="rule-item">
-                <h4>💰 No Vote Buying</h4>
-                <p>Vote buying or offering incentives in exchange for votes is strictly prohibited and may result in disqualification.</p>
-            </div>
-            <div class="rule-item">
-                <h4>✔️ Truthfulness</h4>
-                <p>Only share truthful information. Fake news and misinformation will not be tolerated in this election.</p>
-            </div>
-            <div class="rule-item">
-                <h4>🗳️ One Vote Per Person</h4>
-                <p>Each eligible participant gets only one vote. Multiple voting is against the rules and will be investigated.</p>
-            </div>
-            <div class="rule-item">
-                <h4>🚫 No Harassment</h4>
-                <p>Harassment, threats, or personal attacks against candidates or voters are strictly forbidden.</p>
-            </div>
-            <div class="rule-item">
-                <h4>📊 Transparency</h4>
-                <p>Results will be announced and handled with complete honesty and transparency for all to see.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== VOTE SECTION ==================== -->
-    <section class="vote" id="vote">
-        <h2>Cast Your Vote</h2>
-        <p>Click the button below to submit your official AmanahYouth election response.</p>
-        <!-- EDIT: Change YOUR_GOOGLE_FORM_LINK_HERE to your actual Google Form link -->
-        <a href="YOUR_GOOGLE_FORM_LINK_HERE" class="btn" target="_blank">Submit Your Vote</a>
-    </section>
-
-    <!-- ==================== LIVE RESPONSES SECTION ==================== -->
-    <section class="live-responses" id="responses">
-        <h2>Live Election Results</h2>
-        <div class="responses-container">
-            <div class="responses-note">
-                <strong>📊 Live Results:</strong> Results are updated in real-time as votes come in. Election organizers may choose to hide these results until the voting period ends for fairness.
-            </div>
-            <!-- EDIT: Change YOUR_GOOGLE_SHEET_EMBED_LINK_HERE to your actual Google Sheet embed link -->
-            <iframe src="YOUR_GOOGLE_SHEET_EMBED_LINK_HERE" class="sheet-embed"></iframe>
-        </div>
-    </section>
-
-    <!-- ==================== PRE-BUDGET SECTION ==================== -->
+    <!-- ==================== WALLET BALANCE SECTION ==================== -->
     <section class="budget" id="budget">
-        <h2>Pre-Budget Planner</h2>
-        <p>Build your pre-budget and see totals update live. Adjust amounts below to track projected versus actual spending.</p>
+        <h2>CM Wallet Balance</h2>
+        <p>Track the CM's live wallet balance here. Enter cash in and cash out amounts to see available funds instantly.</p>
         <div class="budget-system">
             <table class="budget-table">
                 <thead>
                     <tr>
-                        <th>Budget Item</th>
-                        <th>Projected Amount (AED)</th>
-                        <th>Actual Amount (AED)</th>
+                        <th>Cash Entry</th>
+                        <th>Cash In (AED)</th>
+                        <th>Cash Out (AED)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Venue</td>
-                        <td><input class="budget-input" type="number" min="0" value="0" data-type="projected"></td>
-                        <td><input class="budget-input" type="number" min="0" value="0" data-type="actual"></td>
+                        <td>Starting Balance</td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="in"></td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="out"></td>
                     </tr>
                     <tr>
-                        <td>Marketing</td>
-                        <td><input class="budget-input" type="number" min="0" value="0" data-type="projected"></td>
-                        <td><input class="budget-input" type="number" min="0" value="0" data-type="actual"></td>
+                        <td>Event Funds</td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="in"></td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="out"></td>
                     </tr>
                     <tr>
-                        <td>Materials</td>
-                        <td><input class="budget-input" type="number" min="0" value="0" data-type="projected"></td>
-                        <td><input class="budget-input" type="number" min="0" value="0" data-type="actual"></td>
+                        <td>Donations</td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="in"></td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="out"></td>
                     </tr>
                     <tr>
-                        <td>Refreshments</td>
-                        <td><input class="budget-input" type="number" min="0" value="0" data-type="projected"></td>
-                        <td><input class="budget-input" type="number" min="0" value="0" data-type="actual"></td>
+                        <td>Expenses</td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="in"></td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="out"></td>
                     </tr>
                     <tr>
                         <td>Miscellaneous</td>
-                        <td><input class="budget-input" type="number" min="0" value="0" data-type="projected"></td>
-                        <td><input class="budget-input" type="number" min="0" value="0" data-type="actual"></td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="in"></td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="out"></td>
                     </tr>
                 </tbody>
             </table>
             <div class="budget-summary">
-                <div>Projected Total: AED <span id="projectedTotal">0</span></div>
-                <div>Actual Total: AED <span id="actualTotal">0</span></div>
-                <div>Difference: AED <span id="difference">0</span></div>
+                <div>Total In: AED <span id="projectedTotal">0</span></div>
+                <div>Total Out: AED <span id="actualTotal">0</span></div>
+                <div>Available Cash: AED <span id="difference">0</span></div>
             </div>
-            <p class="budget-note">All amounts update instantly as you type. Replace values later with your approved pre-budget figures.</p>
+            <p class="budget-note">Enter the latest cash entries to keep the wallet balance up to date. The balance updates automatically.</p>
         </div>
     </section>
 
@@ -930,30 +833,30 @@
             });
         });
 
-        // Live budget totals
+        // Live wallet totals
         const budgetInputs = document.querySelectorAll('.budget-input');
         const projectedTotalEl = document.getElementById('projectedTotal');
         const actualTotalEl = document.getElementById('actualTotal');
         const differenceEl = document.getElementById('difference');
 
         function calculateBudgetTotals() {
-            let projectedTotal = 0;
-            let actualTotal = 0;
+            let totalIn = 0;
+            let totalOut = 0;
 
             budgetInputs.forEach(input => {
                 const value = parseFloat(input.value) || 0;
-                if (input.dataset.type === 'projected') {
-                    projectedTotal += value;
-                } else if (input.dataset.type === 'actual') {
-                    actualTotal += value;
+                if (input.dataset.type === 'in') {
+                    totalIn += value;
+                } else if (input.dataset.type === 'out') {
+                    totalOut += value;
                 }
             });
 
-            const difference = actualTotal - projectedTotal;
+            const availableCash = totalIn - totalOut;
 
-            projectedTotalEl.textContent = projectedTotal.toFixed(2);
-            actualTotalEl.textContent = actualTotal.toFixed(2);
-            differenceEl.textContent = difference.toFixed(2);
+            projectedTotalEl.textContent = totalIn.toFixed(2);
+            actualTotalEl.textContent = totalOut.toFixed(2);
+            differenceEl.textContent = availableCash.toFixed(2);
         }
 
         budgetInputs.forEach(input => {
