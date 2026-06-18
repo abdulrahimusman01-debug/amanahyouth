@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmanahYouth Election 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Color Theme */
+        :root {
+            --primary-green: #2d7a3e;
+            --light-green: #4a9b5f;
+            --gold: #d4af37;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+            --text-gray: #666666;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+
+        /* ==================== HEADER & NAVBAR ==================== */
+        header {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
+            color: var(--white);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: slideInDown 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: slideInUp 0.8s ease;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--gold);
+            color: var(--primary-green);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid var(--gold);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--white);
+            color: var(--primary-green);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--gold);
+            color: var(--primary-green);
+        }
+
+        /* ==================== SECTIONS ==================== */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+            text-align: center;
+        }
+
+        section > p:first-of-type {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        /* ==================== ABOUT SECTION ==================== */
+        .about {
+            background-color: var(--light-gray);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        .about-content ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .about-content li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-gray);
+        }
+
+        .about-content li:before {
+            content: "✓";
+            color: var(--light-green);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* ==================== CANDIDATES SECTION ==================== */
+        .candidates {
+            background-color: var(--white);
+        }
+
+        .candidates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .candidate-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--light-green);
+        }
+
+        .candidate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .candidate-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+        }
+
+        .candidate-info {
+            padding: 1.5rem;
+        }
+
+        .candidate-info h3 {
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .candidate-position {
+            color: var(--gold);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .candidate-platform {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* ==================== DOCUMENTS SECTION ==================== */
+        .documents {
+            background-color: var(--light-gray);
+        }
+
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .document-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid var(--gold);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .document-info {
+            padding: 1.5rem;
+        }
+
+        .document-info h3 {
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .document-info p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .doc-link {
+            display: inline-block;
+            padding: 0.8rem 1.2rem;
+            margin: 1rem 1.5rem 1.5rem;
+            background-color: var(--gold);
+            color: var(--primary-green);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .doc-link.disabled {
+            background-color: #e0e0e0;
+            color: var(--text-gray);
+            pointer-events: none;
+            cursor: default;
+            border-color: #d0d0d0;
+        }
+
+        /* ==================== PRE-BUDGET SECTION ==================== */
+        .budget {
+            background-color: var(--white);
+        }
+
+        .budget-system {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            margin-top: 2rem;
+        }
+
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+
+        .budget-table th,
+        .budget-table td {
+            padding: 0.9rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .budget-table th {
+            background-color: var(--primary-green);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .budget-input {
+            width: 100%;
+            padding: 0.65rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .budget-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .budget-summary div {
+            background: var(--white);
+            padding: 1rem 1.2rem;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+
+        .budget-note {
+            margin-top: 1rem;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* ==================== RULES SECTION ==================== */
+        .rules {
+            background-color: var(--light-gray);
+        }
+
+        .rules-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .rule-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .rule-item h4 {
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .rule-item p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* ==================== VOTE SECTION ==================== */
+        .vote {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--light-green) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .vote h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .vote p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* ==================== LIVE RESPONSES SECTION ==================== */
+        .live-responses {
+            background-color: var(--white);
+        }
+
+        .responses-container {
+            margin-top: 2rem;
+        }
+
+        .responses-note {
+            background-color: var(--light-gray);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            border-left: 4px solid var(--gold);
+        }
+
+        .sheet-embed {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        /* ==================== CONTACT SECTION ==================== */
+        .contact {
+            background-color: var(--light-gray);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-card p {
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a {
+            color: var(--light-green);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-card a:hover {
+            color: var(--primary-green);
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background-color: var(--primary-green);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* ==================== ANIMATIONS ==================== */
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================== MOBILE RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--primary-green);
+                padding: 1rem 0;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 0.8rem 2rem;
+                display: block;
+                text-align: left;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .candidates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rules-list {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sheet-embed {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+                min-height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== HEADER & NAVBAR ==================== -->
+    <header>
+        <nav>
+            <div class="logo">AmanahYouth</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#candidates">Candidates</a></li>
+                <li><a href="#documents">Documents</a></li>
+                <li><a href="#rules">Rules</a></li>
+                <li><a href="#vote">Vote</a></li>
+                <li><a href="#budget">Budget</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="home">
+        <h1>AmanahYouth Election 2026</h1>
+        <p>Empowering Youth. Building Trust. Leading with Amanah.</p>
+        <!-- EDIT: Change YOUR_GOOGLE_FORM_LINK_HERE to your actual Google Form link -->
+        <a href="YOUR_GOOGLE_FORM_LINK_HERE" class="btn" target="_blank">Vote Now</a>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="about" id="about">
+        <h2>About AmanahYouth</h2>
+        <div class="about-content">
+            <div>
+                <h3>Who We Are</h3>
+                <p>AmanahYouth is a youth-led movement dedicated to fostering leadership, service, unity, and responsibility among young people. We believe in the power of collective action and transparent governance.</p>
+            </div>
+            <div>
+                <h3>Our Core Values</h3>
+                <ul>
+                    <li>Leadership through example and integrity</li>
+                    <li>Service to our community and nation</li>
+                    <li>Unity across all backgrounds and beliefs</li>
+                    <li>Responsibility in every decision we make</li>
+                    <li>Trust as the foundation of everything</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CANDIDATES SECTION ==================== -->
+    <section class="candidates" id="candidates">
+        <h2>Meet Our Candidates</h2>
+        <div class="candidates-grid">
+            <!-- EDIT: Modify candidate information below -->
+            <!-- Candidate 1 -->
+            <div class="candidate-card">
+                <div class="candidate-image">👤</div>
+                <div class="candidate-info">
+                    <h3>Ahmed Hassan</h3>
+                    <div class="candidate-position">President</div>
+                    <p class="candidate-platform">Focused on strengthening youth engagement, improving communication across all sectors, and building sustainable community programs that create real impact.</p>
+                </div>
+            </div>
+
+            <!-- Candidate 2 -->
+            <div class="candidate-card">
+                <div class="candidate-image">👤</div>
+                <div class="candidate-info">
+                    <h3>Fatima Ahmed</h3>
+                    <div class="candidate-position">Vice President</div>
+                    <p class="candidate-platform">Dedicated to empowering women leaders, promoting inclusive decision-making, and ensuring every voice in our community is heard and valued.</p>
+                </div>
+            </div>
+
+            <!-- Candidate 3 -->
+            <div class="candidate-card">
+                <div class="candidate-image">👤</div>
+                <div class="candidate-info">
+                    <h3>Muhammad Ibrahim</h3>
+                    <div class="candidate-position">Secretary General</div>
+                    <p class="candidate-platform">Committed to transparency in all operations, efficient organization of events and initiatives, and maintaining clear communication between leadership and members.</p>
+                </div>
+            </div>
+
+            <!-- Candidate 4 -->
+            <div class="candidate-card">
+                <div class="candidate-image">👤</div>
+                <div class="candidate-info">
+                    <h3>Layla Mohamed</h3>
+                    <div class="candidate-position">Treasurer</div>
+                    <p class="candidate-platform">Working to ensure financial responsibility, transparent budget management, and equitable resource allocation for all youth programs and initiatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DOCUMENTS SECTION ==================== -->
+    <section class="documents" id="documents">
+        <h2>Leader Documents</h2>
+        <p>Documents for each leader will be added here once they are provided. Use these cards to link agendas, proposals, or leader statements.</p>
+        <div class="documents-grid">
+            <div class="document-card">
+                <div class="document-info">
+                    <h3>Ahmed Hassan</h3>
+                    <p>President</p>
+                </div>
+                <a href="#" class="doc-link disabled">Document Coming Soon</a>
+            </div>
+            <div class="document-card">
+                <div class="document-info">
+                    <h3>Fatima Ahmed</h3>
+                    <p>Vice President</p>
+                </div>
+                <a href="#" class="doc-link disabled">Document Coming Soon</a>
+            </div>
+            <div class="document-card">
+                <div class="document-info">
+                    <h3>Muhammad Ibrahim</h3>
+                    <p>Secretary General</p>
+                </div>
+                <a href="#" class="doc-link disabled">Document Coming Soon</a>
+            </div>
+            <div class="document-card">
+                <div class="document-info">
+                    <h3>Layla Mohamed</h3>
+                    <p>Treasurer</p>
+                </div>
+                <a href="#" class="doc-link disabled">Document Coming Soon</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== RULES SECTION ==================== -->
+    <section class="rules" id="rules">
+        <h2>Election Rules & Guidelines</h2>
+        <div class="rules-list">
+            <div class="rule-item">
+                <h4>🤝 Respect All</h4>
+                <p>Respect all candidates and voters equally. Personal attacks and disrespectful behavior are not tolerated.</p>
+            </div>
+            <div class="rule-item">
+                <h4>💰 No Vote Buying</h4>
+                <p>Vote buying or offering incentives in exchange for votes is strictly prohibited and may result in disqualification.</p>
+            </div>
+            <div class="rule-item">
+                <h4>✔️ Truthfulness</h4>
+                <p>Only share truthful information. Fake news and misinformation will not be tolerated in this election.</p>
+            </div>
+            <div class="rule-item">
+                <h4>🗳️ One Vote Per Person</h4>
+                <p>Each eligible participant gets only one vote. Multiple voting is against the rules and will be investigated.</p>
+            </div>
+            <div class="rule-item">
+                <h4>🚫 No Harassment</h4>
+                <p>Harassment, threats, or personal attacks against candidates or voters are strictly forbidden.</p>
+            </div>
+            <div class="rule-item">
+                <h4>📊 Transparency</h4>
+                <p>Results will be announced and handled with complete honesty and transparency for all to see.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== VOTE SECTION ==================== -->
+    <section class="vote" id="vote">
+        <h2>Cast Your Vote</h2>
+        <p>Click the button below to submit your official AmanahYouth election response.</p>
+        <!-- EDIT: Change YOUR_GOOGLE_FORM_LINK_HERE to your actual Google Form link -->
+        <a href="YOUR_GOOGLE_FORM_LINK_HERE" class="btn" target="_blank">Submit Your Vote</a>
+    </section>
+
+    <!-- ==================== LIVE RESPONSES SECTION ==================== -->
+    <section class="live-responses" id="responses">
+        <h2>Live Election Results</h2>
+        <div class="responses-container">
+            <div class="responses-note">
+                <strong>📊 Live Results:</strong> Results are updated in real-time as votes come in. Election organizers may choose to hide these results until the voting period ends for fairness.
+            </div>
+            <!-- EDIT: Change YOUR_GOOGLE_SHEET_EMBED_LINK_HERE to your actual Google Sheet embed link -->
+            <iframe src="YOUR_GOOGLE_SHEET_EMBED_LINK_HERE" class="sheet-embed"></iframe>
+        </div>
+    </section>
+
+    <!-- ==================== PRE-BUDGET SECTION ==================== -->
+    <section class="budget" id="budget">
+        <h2>Pre-Budget Planner</h2>
+        <p>Build your pre-budget and see totals update live. Adjust amounts below to track projected versus actual spending.</p>
+        <div class="budget-system">
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Budget Item</th>
+                        <th>Projected Amount (AED)</th>
+                        <th>Actual Amount (AED)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Venue</td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="projected"></td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="actual"></td>
+                    </tr>
+                    <tr>
+                        <td>Marketing</td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="projected"></td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="actual"></td>
+                    </tr>
+                    <tr>
+                        <td>Materials</td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="projected"></td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="actual"></td>
+                    </tr>
+                    <tr>
+                        <td>Refreshments</td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="projected"></td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="actual"></td>
+                    </tr>
+                    <tr>
+                        <td>Miscellaneous</td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="projected"></td>
+                        <td><input class="budget-input" type="number" min="0" value="0" data-type="actual"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="budget-summary">
+                <div>Projected Total: AED <span id="projectedTotal">0</span></div>
+                <div>Actual Total: AED <span id="actualTotal">0</span></div>
+                <div>Difference: AED <span id="difference">0</span></div>
+            </div>
+            <p class="budget-note">All amounts update instantly as you type. Replace values later with your approved pre-budget figures.</p>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="contact" id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>📧 Email</h3>
+                <p>Questions or concerns?</p>
+                <a href="mailto:info@amanahyouth.org">info@amanahyouth.org</a>
+            </div>
+            <div class="contact-card">
+                <h3>📘 Follow Us</h3>
+                <p>Connect with us online</p>
+                <a href="https://www.facebook.com/amanahyouth" target="_blank">AmanahYouth Facebook</a>
+            </div>
+            <div class="contact-card">
+                <h3>📍 Location</h3>
+                <p>Find us in your area</p>
+                <p><strong>Amanah Youth Center</strong><br>Contact local chapter for address</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <p>&copy; 2026 AmanahYouth. All rights reserved.</p>
+        <p>Empowering Youth. Building Trust. Leading with Amanah.</p>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]:not(.disabled)').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Live budget totals
+        const budgetInputs = document.querySelectorAll('.budget-input');
+        const projectedTotalEl = document.getElementById('projectedTotal');
+        const actualTotalEl = document.getElementById('actualTotal');
+        const differenceEl = document.getElementById('difference');
+
+        function calculateBudgetTotals() {
+            let projectedTotal = 0;
+            let actualTotal = 0;
+
+            budgetInputs.forEach(input => {
+                const value = parseFloat(input.value) || 0;
+                if (input.dataset.type === 'projected') {
+                    projectedTotal += value;
+                } else if (input.dataset.type === 'actual') {
+                    actualTotal += value;
+                }
+            });
+
+            const difference = actualTotal - projectedTotal;
+
+            projectedTotalEl.textContent = projectedTotal.toFixed(2);
+            actualTotalEl.textContent = actualTotal.toFixed(2);
+            differenceEl.textContent = difference.toFixed(2);
+        }
+
+        budgetInputs.forEach(input => {
+            input.addEventListener('input', calculateBudgetTotals);
+        });
+
+        calculateBudgetTotals();
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections and cards
+        document.querySelectorAll('section, .candidate-card, .rule-item, .contact-card').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'all 0.6s ease';
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
