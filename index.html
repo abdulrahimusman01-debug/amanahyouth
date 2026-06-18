@@ -73,6 +73,7 @@
 
         .logo-text {
             line-height: 1;
+            display: none;
         }
 
         .nav-links {
@@ -112,7 +113,7 @@
         .hero {
             position: relative;
             background-image: url('./newbackgg.png');
-            background-size: contain;
+            background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
             background-attachment: scroll;
@@ -131,7 +132,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25));
+            background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.05));
             pointer-events: none;
             z-index: 0;
         }
@@ -636,7 +637,7 @@
 
             .hero {
                 background-position: center center;
-                background-size: contain;
+                background-size: cover;
                 padding: 2rem 1rem;
                 min-height: 45vh;
             }
@@ -695,7 +696,7 @@
                 padding: 1rem;
                 min-height: 50vh;
                 background-image: url('./newbackgg.png');
-                background-size: contain;
+                background-size: cover;
                 background-position: center center;
                 background-repeat: no-repeat;
                 display: flex;
