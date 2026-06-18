@@ -112,18 +112,13 @@
         /* ==================== HERO SECTION ==================== */
         .hero {
             position: relative;
-            background-image: url('./newbackgg.png');
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-attachment: scroll;
+            background: #000;
             color: var(--white);
-            padding: 4rem 1.5rem;
+            padding: 0;
             text-align: center;
-            min-height: 500px;
+            min-height: auto;
             width: 100%;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             overflow: hidden;
@@ -133,7 +128,6 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.05));
             pointer-events: none;
             z-index: 0;
         }
@@ -143,9 +137,14 @@
             z-index: 1;
         }
 
-        /* Always hidden — CSS background handles the image on all screen sizes */
         .hero-img {
-            display: none !important;
+            display: block;
+            width: 100%;
+            max-width: 100vw;
+            height: auto;
+            max-height: 60vh;
+            object-fit: contain;
+            margin: 0 auto;
         }
 
         .hero h1 {
@@ -634,11 +633,13 @@
             }
 
             .hero {
-                background-position: center center;
-                background-size: cover;
-                background-attachment: scroll;
-                padding: 1.5rem 1rem;
-                min-height: 50vh;
+                padding: 0;
+                min-height: auto;
+                max-height: 50vh;
+            }
+
+            .hero-img {
+                max-height: 45vh;
             }
 
             .hero h1 {
@@ -686,12 +687,15 @@
             }
 
             .hero {
-                padding: 1rem 0.75rem;
-                min-height: 55vh;
-                background-size: cover;
-                background-position: center center;
+                padding: 0;
+                min-height: auto;
+                max-height: 46vh;
                 justify-content: center;
                 align-items: center;
+            }
+
+            .hero-img {
+                max-height: 42vh;
             }
 
             .logo-img {
