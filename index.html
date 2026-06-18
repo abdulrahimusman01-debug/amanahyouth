@@ -676,15 +676,24 @@
             }
 
             .hero {
-                padding: 2.5rem 1rem;
-                min-height: 55vh;
-                background-size: cover;
-                background-position: center center;
+                padding: 0;
+                min-height: auto;
+                background-image: none;
+                background-size: auto;
                 background-repeat: no-repeat;
-                background-image: url('./amanahbackground.png');
+                background-position: center center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
-            .hero-img { display: none; }
+            .hero-img {
+                display: block;
+                width: 100%;
+                height: auto;
+                max-height: 55vh;
+                object-fit: contain;
+            }
 
             .hero h1 {
                 font-size: 1.2rem;
