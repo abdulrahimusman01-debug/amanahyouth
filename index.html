@@ -126,6 +126,14 @@
             z-index: 1;
         }
 
+        .hero-img {
+            display: none;
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
         .hero h1 {
             font-size: clamp(1.6rem, 2.8vw + 0.6rem, 2.2rem);
             margin-bottom: 0.9rem;
@@ -617,6 +625,9 @@
                 min-height: 260px;
             }
 
+            /* show inline image on mid-size phones if needed */
+            .hero-img { display: block; }
+
             .hero h1 {
                 font-size: 1.6rem;
             }
@@ -663,8 +674,13 @@
                 padding: 1.5rem 0.8rem;
                 min-height: 200px;
                 background-position: center 30%;
-                background-size: cover;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-image: none;
             }
+
+            .hero-img { display: block; max-width: 100%; height: auto; }
 
             .hero h1 {
                 font-size: 1.1rem;
@@ -707,7 +723,9 @@
     </header>
 
     <!-- ==================== HERO SECTION ==================== -->
-    <section class="hero" id="home"></section>
+    <section class="hero" id="home">
+        <img src="./amanahbackground.png" alt="Amanah background" class="hero-img" aria-hidden="true">
+    </section>
 
     <!-- ==================== ABOUT SECTION ==================== -->
     <section class="about" id="about">
