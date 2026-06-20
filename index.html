@@ -20,6 +20,8 @@
             --gold: #f0a843;
             --dark-gold: #d4905f;
             --white: #ffffff;
+            --cream-bg: #fbf1e5;
+            --cream-pattern: rgba(255, 255, 255, 0.7);
             --light-gray: #f8f9fa;
             --medium-gray: #e8eaed;
             --dark-gray: rgba(10, 30, 85, 0.95);
@@ -33,7 +35,13 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--dark-gray);
-            background-color: var(--white);
+            background-color: var(--cream-bg);
+            background-image:
+                radial-gradient(circle at 10% 10%, var(--cream-pattern) 0%, transparent 15%),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.35) 1px, transparent 1px),
+                linear-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+            background-size: 120px 120px, 40px 40px, 40px 40px;
+            background-position: 0 0, 0 0, 20px 20px;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
