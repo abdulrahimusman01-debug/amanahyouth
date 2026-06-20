@@ -14,9 +14,9 @@
 
         /* Color Theme - Enhanced */
         :root {
-            --primary-green: #1a5f2e;
-            --light-green: #2d8a47;
-            --accent-green: #4aad68;
+            --primary-green: rgba(180, 180, 180, 0.25);
+            --light-green: rgba(190, 190, 190, 0.3);
+            --accent-green: rgba(200, 200, 200, 0.28);
             --gold: #f0a843;
             --dark-gold: #d4905f;
             --white: #ffffff;
@@ -41,7 +41,7 @@
 
         /* ==================== HEADER & NAVBAR ==================== */
         header {
-            background: linear-gradient(135deg, var(--primary-green) 0%, #0f3f1f 100%);
+            background: linear-gradient(135deg, var(--primary-green) 0%, rgba(150, 150, 150, 0.2) 100%);
             color: var(--white);
             padding: 0.8rem 1rem;
             position: sticky;
@@ -149,7 +149,7 @@
         /* ==================== HERO SECTION ==================== */
         .hero {
             position: relative;
-            background: linear-gradient(135deg, var(--primary-green) 0%, #0f3f1f 50%, #1a5f2e 100%);
+            background: linear-gradient(135deg, var(--primary-green) 0%, rgba(160, 160, 160, 0.2) 50%, var(--primary-green) 100%);
             color: var(--white);
             padding: 2rem;
             text-align: center;
@@ -167,7 +167,7 @@
             position: absolute;
             inset: 0;
             background: radial-gradient(circle at 20% 50%, rgba(240, 168, 67, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(45, 138, 71, 0.08) 0%, transparent 50%);
+                        radial-gradient(circle at 80% 80%, rgba(200, 200, 200, 0.08) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
@@ -391,7 +391,9 @@
 
         .candidate-image {
             width: 100%;
-            height: 280px;
+            height: auto;
+            aspect-ratio: 4 / 5;
+            min-height: 220px;
             background: linear-gradient(135deg, var(--accent-green) 0%, var(--light-green) 100%);
             display: flex;
             align-items: center;
@@ -514,12 +516,12 @@
             text-transform: uppercase;
             font-size: 0.85rem;
             letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(45, 138, 71, 0.3);
+            box-shadow: 0 4px 15px rgba(200, 200, 200, 0.25);
         }
 
         .doc-link:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(45, 138, 71, 0.4);
+            box-shadow: 0 6px 20px rgba(200, 200, 200, 0.3);
             background: linear-gradient(135deg, var(--light-green), var(--accent-green));
         }
 
@@ -587,8 +589,8 @@
         .budget-input:focus {
             outline: none;
             border-color: var(--accent-green);
-            box-shadow: 0 0 0 3px rgba(74, 173, 104, 0.1);
-            background: rgba(74, 173, 104, 0.02);
+            box-shadow: 0 0 0 3px rgba(200, 200, 200, 0.15);
+            background: rgba(200, 200, 200, 0.02);
         }
 
         .budget-summary {
@@ -606,7 +608,7 @@
             font-weight: 800;
             color: var(--white);
             text-align: center;
-            box-shadow: 0 6px 20px rgba(29, 95, 46, 0.25);
+            box-shadow: 0 6px 20px rgba(190, 190, 190, 0.2);
             text-transform: uppercase;
             font-size: 0.9rem;
             letter-spacing: 1px;
@@ -627,7 +629,7 @@
             text-align: center;
             font-style: italic;
             padding: 1rem;
-            background: rgba(74, 173, 104, 0.08);
+            background: rgba(200, 200, 200, 0.08);
             border-radius: 8px;
             border-left: 4px solid var(--accent-green);
         }
@@ -830,7 +832,7 @@
 
         /* ==================== FOOTER ==================== */
         footer {
-            background: linear-gradient(135deg, var(--primary-green) 0%, #0f3f1f 100%);
+            background: linear-gradient(135deg, var(--primary-green) 0%, rgba(160, 160, 160, 0.2) 100%);
             color: var(--white);
             text-align: center;
             padding: 3rem 2rem;
@@ -929,7 +931,7 @@
                 left: 0;
                 width: 100%;
                 flex-direction: column;
-                background: linear-gradient(135deg, var(--primary-green) 0%, #0f3f1f 100%);
+                background: linear-gradient(135deg, var(--primary-green) 0%, rgba(160, 160, 160, 0.2) 100%);
                 padding: 1.5rem 0;
                 gap: 0;
                 border-top: 3px solid var(--gold);
@@ -1015,7 +1017,8 @@
             }
 
             .candidate-image {
-                height: 220px;
+                min-height: 200px;
+                aspect-ratio: 4 / 5;
             }
 
             .documents-grid {
@@ -1148,7 +1151,8 @@
             }
 
             .candidate-image {
-                height: 200px;
+                min-height: 180px;
+                aspect-ratio: 4 / 5;
                 font-size: 3rem;
             }
 
@@ -1342,7 +1346,8 @@
             }
 
             .candidate-image {
-                height: 180px;
+                min-height: 160px;
+                aspect-ratio: 4 / 5;
                 font-size: 2.5rem;
             }
 
@@ -1699,4 +1704,3 @@
     </script>
 </body>
 </html>
-
