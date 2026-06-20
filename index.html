@@ -830,6 +830,45 @@
             border-bottom-color: var(--primary-green);
         }
 
+        .contact-widget {
+            width: 100%;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .facebook-section {
+            background: linear-gradient(135deg, rgba(248, 249, 250, 0.95) 0%, #ffffff 100%);
+            padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 4vw, 2rem);
+        }
+
+        .facebook-section p {
+            max-width: 860px;
+            margin: 0 auto 1.5rem;
+            color: var(--text-gray);
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .fb-page-wrapper {
+            width: 100%;
+            max-width: 820px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: var(--white);
+        }
+
+        .fb-page-wrapper .fb-page {
+            width: 100% !important;
+        }
+
+        .fb-page-wrapper iframe {
+            width: 100% !important;
+            min-height: 520px !important;
+        }
+
         /* ==================== FOOTER ==================== */
         footer {
             background: linear-gradient(135deg, var(--primary-green) 0%, rgba(160, 160, 160, 0.2) 100%);
@@ -1600,7 +1639,7 @@
             <div class="contact-card">
                 <h3>📘 Follow Us</h3>
                 <p>Connect with us online</p>
-                <a href="https://www.facebook.com/amanahyouth" target="_blank">AmanahYouth Facebook</a>
+                <a href="https://www.facebook.com/amanahyouthorganization" target="_blank" rel="noopener">AmanahYouth Organization</a>
             </div>
             <div class="contact-card">
                 <h3>📍 Location</h3>
@@ -1610,11 +1649,37 @@
         </div>
     </section>
 
+    <!-- ==================== FACEBOOK SECTION ==================== -->
+    <section class="facebook-section" id="facebook">
+        <h2>Follow Our Facebook Page</h2>
+        <p>Stay updated with our timeline, cover photo, and latest announcements directly from Facebook.</p>
+        <div class="contact-widget">
+            <div class="fb-page-wrapper">
+                <div class="fb-page"
+                    data-href="https://www.facebook.com/amanahyouthorganization"
+                    data-tabs="timeline"
+                    data-width=""
+                    data-height="520"
+                    data-small-header="false"
+                    data-adapt-container-width="true"
+                    data-hide-cover="false"
+                    data-show-facepile="true">
+                    <blockquote cite="https://www.facebook.com/amanahyouthorganization" class="fb-xfbml-parse-ignore">
+                        <a href="https://www.facebook.com/amanahyouthorganization" target="_blank" rel="noopener">AmanahYouth Organization</a>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ==================== FOOTER ==================== -->
     <footer>
         <p>&copy; 2026 AmanahYouth. All rights reserved.</p>
         <p>Empowering Youth. Building Trust. Leading with Amanah.</p>
     </footer>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0"></script>
 
     <!-- ==================== JAVASCRIPT ==================== -->
     <script>
