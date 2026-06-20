@@ -857,7 +857,7 @@
         }
 
         .facebook-section {
-            background: linear-gradient(135deg, rgba(248, 249, 250, 0.95) 0%, #ffffff 100%);
+            background: linear-gradient(135deg, rgba(251, 241, 229, 0.95) 0%, #ffffff 100%);
             padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 4vw, 2rem);
         }
 
@@ -870,24 +870,266 @@
             line-height: 1.7;
         }
 
-        .fb-page-wrapper {
+        .facebook-card {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 1.5rem;
             width: 100%;
-            max-width: 100%;
-            border-radius: 16px;
+            max-width: 1120px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 24px;
             overflow: hidden;
             box-shadow: var(--shadow);
+            border: 1px solid rgba(10, 30, 85, 0.08);
+        }
+
+        .facebook-card-image {
+            position: relative;
+            min-height: 340px;
+            background-image: url("./newbackgg.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 2rem 1.5rem 1.5rem;
+        }
+
+        .facebook-card-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(10, 30, 85, 0.18), rgba(10, 30, 85, 0.02));
+        }
+
+        .facebook-card-image img {
+            position: relative;
+            z-index: 1;
+            width: 112px;
+            height: 112px;
+            object-fit: cover;
+            border-radius: 24px;
+            border: 3px solid rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 18px 38px rgba(10, 30, 85, 0.18);
+            margin: 0 auto 1.5rem;
+        }
+
+        .facebook-card-image .facebook-cover-label {
+            position: absolute;
+            left: 1.5rem;
+            bottom: 1.5rem;
+            z-index: 1;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.3px;
+            text-shadow: 0 6px 18px rgba(0,0,0,0.35);
+            background: rgba(10, 30, 85, 0.32);
+            padding: 0.75rem 1rem;
+            border-radius: 16px;
+        }
+
+        .facebook-card-body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .facebook-badge {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .facebook-badge img {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            object-fit: cover;
+            border: 2px solid var(--gold);
             background: var(--white);
         }
 
-        .fb-page-wrapper .fb-page {
-            width: 100% !important;
-            min-height: 520px;
+        .facebook-badge span {
+            display: block;
         }
 
-        .fb-page-wrapper iframe {
-            width: 100% !important;
-            min-height: 520px !important;
-            height: auto !important;
+        .facebook-label {
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .facebook-title {
+            color: var(--heading-blue);
+            font-size: clamp(1.75rem, 2.7vw, 2.5rem);
+            margin: 0.25rem 0 1rem;
+            line-height: 1.1;
+            font-weight: 900;
+        }
+
+        .facebook-desc {
+            color: var(--text-gray);
+            line-height: 1.75;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .facebook-post {
+            background: linear-gradient(135deg, rgba(248, 249, 250, 0.95), rgba(255, 255, 255, 0.95));
+            border: 1px solid rgba(10, 30, 85, 0.08);
+            border-radius: 18px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+        }
+
+        .facebook-post-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .facebook-post-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--heading-blue);
+        }
+
+        .facebook-post-meta {
+            font-size: 0.85rem;
+            color: rgba(10, 35, 115, 0.65);
+        }
+
+        .facebook-post-body {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .facebook-post-actions {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .facebook-post-actions span {
+            color: rgba(10, 35, 115, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .facebook-post-actions a {
+            color: var(--heading-blue);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .facebook-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 1.75rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--heading-blue), var(--dark-gold));
+            color: var(--white);
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 12px 28px rgba(10, 30, 85, 0.18);
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+
+        .facebook-button:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.05);
+        }
+
+        @media (max-width: 860px) {
+            .facebook-card {
+                grid-template-columns: 1fr;
+            }
+
+            .facebook-card-image {
+                min-height: 260px;
+                padding: 1.5rem 1.5rem 0;
+            }
+
+            .facebook-card-body {
+                padding: 1.5rem;
+            }
+
+            .facebook-badge {
+                flex-wrap: wrap;
+                gap: 0.85rem;
+                align-items: flex-start;
+            }
+
+            .facebook-badge img {
+                width: 64px;
+                height: 64px;
+            }
+
+            .facebook-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .facebook-card-image {
+                min-height: 240px;
+                padding: 1.25rem 1.25rem 0;
+            }
+
+            .facebook-card-body {
+                padding: 1.25rem;
+            }
+
+            .facebook-title {
+                font-size: 1.8rem;
+            }
+
+            .facebook-post {
+                padding: 1.25rem;
+            }
+
+            .facebook-post-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .facebook-post-actions span,
+            .facebook-post-actions a {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .facebook-cover-label {
+                left: 1rem;
+                right: 1rem;
+                bottom: 1rem;
+                font-size: 0.95rem;
+            }
+
+            .facebook-card-image img {
+                width: 88px;
+                height: 88px;
+            }
         }
 
         /* ==================== FOOTER ==================== */
@@ -1680,22 +1922,40 @@
     <!-- ==================== FACEBOOK SECTION ==================== -->
     <section class="facebook-section" id="facebook">
         <h2>Follow Our Facebook Page</h2>
-        <p>Stay updated with our timeline, cover photo, and latest announcements directly from Facebook.</p>
-        <div class="contact-widget">
-            <div class="fb-page-wrapper">
-                <div class="fb-page"
-                    data-href="https://www.facebook.com/amanahyouthorganization"
-                    data-tabs="timeline"
-                    data-width=""
-                    data-height="520"
-                    data-small-header="false"
-                    data-adapt-container-width="true"
-                    data-hide-cover="false"
-                    data-show-facepile="true">
-                    <blockquote cite="https://www.facebook.com/amanahyouthorganization" class="fb-xfbml-parse-ignore">
-                        <a href="https://www.facebook.com/amanahyouthorganization" target="_blank" rel="noopener">AmanahYouth Organization</a>
-                    </blockquote>
+        <p>Experience Amanah Youth Organization's Facebook presence in a clean, branded format that matches your site colors and feels polished.</p>
+        <div class="facebook-card">
+            <div class="facebook-card-image">
+                <div class="facebook-cover-label">Facebook Live Updates</div>
+                <img src="./edit1.png" alt="Amanah Youth Organization logo">
+            </div>
+            <div class="facebook-card-body">
+                <div>
+                    <div class="facebook-badge">
+                        <img src="./edit1.png" alt="Amanah Youth logo">
+                        <span>
+                            <span class="facebook-label">Facebook Page</span>
+                            <strong>Amanah Youth Organization</strong>
+                        </span>
+                    </div>
+                    <h3 class="facebook-title">Amanah Youth Organization</h3>
+                    <p class="facebook-desc">Join our community to stay updated on youth events, leadership programs, volunteer initiatives, and meaningful local impact.</p>
+                    <div class="facebook-post">
+                        <div class="facebook-post-header">
+                            <div>
+                                <p class="facebook-post-title">Amanah Youth Launches Community Leadership Workshops</p>
+                                <p class="facebook-post-meta">Published 2 days ago · Amanah Youth Organization</p>
+                            </div>
+                        </div>
+                        <p class="facebook-post-body">We are excited to announce our new leadership workshop series designed to equip youth with public speaking, service planning, and teamwork skills. Join us and be part of the next generation of leaders.</p>
+                        <div class="facebook-post-actions">
+                            <span>Like · Comment · Share</span>
+                            <a href="https://www.facebook.com/amanahyouthorganization" target="_blank" rel="noopener noreferrer">See full post</a>
+                        </div>
+                    </div>
                 </div>
+                <a class="facebook-button" href="https://www.facebook.com/amanahyouthorganization" target="_blank" rel="noopener noreferrer">
+                    Visit Facebook
+                </a>
             </div>
         </div>
     </section>
@@ -1705,9 +1965,6 @@
         <p>&copy; 2026 AmanahYouth. All rights reserved.</p>
         <p>Empowering Youth. Building Trust. Leading with Amanah.</p>
     </footer>
-
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0"></script>
 
     <!-- ==================== JAVASCRIPT ==================== -->
     <script>
